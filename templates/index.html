@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fish Classifier</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+    />
+  </head>
+  <body>
+    <div
+      class="container"
+      style="margin-top: 25px; display: flex; flex-direction: column"
+    >
+      <h1>Fish Classifier</h1>
+      <h2>Fill in the below fields and hit the Predict button.</h2>
+      <form id="prediction-form" method="post" action="/predict">
+        <div
+          id="form-container"
+          style="
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+          "
+        >
+          <div id="div-weight">
+            <label for="weight">Weight:</label>
+            <input
+              type="number"
+              step=".01"
+              id="weight"
+              name="weight"
+              style="max-width: 100px"
+              value="{{ input_weight }}"
+              required
+            /><br />
+          </div>
+          <div id="div-length-1">
+            <label for="length1">Length1:</label>
+            <input
+              type="number"
+              step=".01"
+              id="length1"
+              name="length1"
+              style="max-width: 100px"
+              value="{{ input_length1 }}"
+              required
+            /><br />
+          </div>
+          <div id="div-length-2">
+            <label for="length2">Length2:</label>
+            <input
+              type="number"
+              step=".01"
+              id="length2"
+              name="length2"
+              style="max-width: 100px"
+              value="{{ input_length2 }}"
+              required
+            /><br />
+          </div>
+          <div id="div-length-3">
+            <label for="length3">Length3:</label>
+            <input
+              type="number"
+              step=".01"
+              id="length3"
+              name="length3"
+              style="max-width: 100px"
+              value="{{ input_length3 }}"
+              required
+            /><br />
+          </div>
+          <div id="div-height">
+            <label for="height">Height:</label>
+            <input
+              type="number"
+              step=".01"
+              id="height"
+              name="height"
+              style="max-width: 100px"
+              value="{{ input_height }}"
+              required
+            /><br />
+          </div>
+          <div id="div-width">
+            <label for="width">Width:</label>
+            <input
+              type="number"
+              step=".01"
+              id="width"
+              name="width"
+              style="max-width: 100px"
+              value="{{ input_width }}"
+              required
+            /><br />
+          </div>
+          <div id="predict-button">
+            <button
+              style="background-color: gold; margin-bottom: 0"
+              type="submit"
+            >
+              Predict
+            </button>
+          </div>
+        </div>
+      </form>
+      <div id="prediction-result">
+        <h3>The predicted species of fish is: <b>{{ predicted_fish }}</b></h3>
+      </div>
+    </div>
+  </body>
+</html>
